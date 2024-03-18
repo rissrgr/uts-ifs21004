@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Dino Pedia</string>
+    <string name="dinosaur_families">Nama Family</string>
+    <string name="family_descriptions">Deskripsi</string>
+    <string name="Origin_of_Name">Asal Usul Nama</string>
+    <string name="Main_Physical_Characteristics">Karakteristik Utama</string>
+    <string name="Interesting_Facts">Fakta Menarik</string>
+    <string name="family_images">Gambar</string>
+
+    <string-array name="dinosaur_families">
+        <item>Maiasaura</item>
+        <item>Oviraptor</item>
+        <item>Troodon</item>
+        <item>Ornithomimids</item>
+        <item>Ankylosaurs</item>
+        <item>Sauropods</item>
+        <item>Hadrosaurs</item>
+        <item>Ceratopsians</item>
+    </string-array>
+
+    <string-array name="family_descriptions">
+        <item>Maiasaura adalah genus dinosaurus hadrosauridae yang hidup pada periode Kapur Akhir, sekitar 76-80 juta tahun yang lalu, di wilayah yang sekarang menjadi Amerika Utara. Nama "Maiasaura" berasal dari bahasa Latin yang berarti "ibu baik", karena spesies ini dianggap sebagai dinosaurus yang merawat telur dan anak-anaknya dengan baik.</item>
+        <item>Oviraptor adalah genus dinosaurus theropoda yang hidup pada periode Kapur Akhir, sekitar 75-70 juta tahun yang lalu, di wilayah yang sekarang menjadi Mongolia. Nama "Oviraptor" berarti "pencuri telur", karena spesies ini awalnya dianggap mencuri telur dari sarang dinosaurus lain, meskipun kemudian ditemukan bahwa mereka sebenarnya sedang mengerami telur mereka sendiri.</item>
+        <item>Troodon adalah genus dinosaurus theropoda yang hidup pada periode Kapur Akhir, sekitar 77-76 juta tahun yang lalu, di wilayah yang sekarang menjadi Amerika Utara. Troodon dikenal karena memiliki otak yang besar dibandingkan dengan dinosaurus lain dari ukuran yang sama, dan diyakini sebagai salah satu dinosaurus cerdas.</item>
+        <item>Ornithomimids adalah famili dinosaurus theropoda yang memiliki kesamaan dengan burung dalam hal bentuk tubuh dan kemungkinan perilaku herbivora. Mereka hidup pada periode Kapur, sekitar 76-66 juta tahun yang lalu, di wilayah yang sekarang menjadi Amerika Utara dan Asia.</item>
+        <item>Ankylosaurs adalah famili dinosaurus ornithischia yang dikenal dengan perlindungan tubuhnya yang kuat dan cangkang yang keras. Mereka hidup pada periode Kapur, sekitar 122-66 juta tahun yang lalu, di wilayah yang sekarang menjadi Amerika Utara, Eropa, dan Asia.</item>
+        <item>Sauropods adalah famili dinosaurus sauropoda yang memiliki tubuh besar, leher panjang, dan ekor yang panjang. Mereka adalah herbivora yang hidup pada periode Jura dan Kapur, sekitar 201-66 juta tahun yang lalu, di wilayah yang sekarang menjadi seluruh dunia.</item>
+        <item>Hadrosaurs adalah famili dinosaurus ornithischia yang dikenal dengan moncong berbentuk seperti bebek dan gigi yang rapi untuk mengunyah makanan tumbuhan. Mereka hidup pada periode Kapur, sekitar 86-66 juta tahun yang lalu, di wilayah yang sekarang menjadi Amerika Utara, Eropa, dan Asia.</item>
+        <item>Ceratopsians adalah famili dinosaurus ornithischia yang memiliki tanduk dan cakar yang menonjol pada kepala mereka. Mereka hidup pada periode Kapur, sekitar 84-66 juta tahun yang lalu, di wilayah yang sekarang menjadi Amerika Utara dan Asia.</item>
+    </string-array>
+
+    <string-array name="Origin_of_Name">
+        <item>Maiasaura berasal dari bahasa Latin "maia" yang berarti "ibu" dan "saura" yang berarti "kadal", merujuk pada perilaku merawat anak Maiasaura yang terbukti dari penemuan sarang telurnya yang berisi fosil bayi dinosaurus.</item>
+        <item>Oviraptor berasal dari bahasa Latin "ovum" yang berarti "telur" dan "raptor" yang berarti "pencuri", karena pada awalnya dinosaurus ini dianggap mencuri telur dari sarang dinosaurus lain, tetapi kemudian ditemukan bahwa Oviraptor sedang menetaskan telurnya sendiri.</item>
+        <item>Troodon berasal dari bahasa Yunani "troo" yang berarti "berlari" dan "odon" yang berarti "gigi", menggambarkan gigi-gigi yang tajam dari dinosaurus ini dan kemungkinan kemampuannya dalam berlari.</item>
+        <item>Ornithomimids berasal dari bahasa Yunani "ornithos" yang berarti "burung" dan "mimos" yang berarti "peniruan", karena postur dan kecepatan Ornithomimids menyerupai burung.</item>
+        <item>Ankylosaurs berasal dari bahasa Yunani "ankylos" yang berarti "bengkok" atau "kaku" dan "sauros" yang berarti "kadal", merujuk pada tubuh yang dilindungi oleh lempeng-lempeg tulang keras.</item>
+        <item>Sauropods berasal dari bahasa Yunani "sauros" yang berarti "kadal" dan "poda" yang berarti "kaki", menggambarkan tubuh yang besar dengan kaki-kaki yang panjang.</item>
+        <item>Hadrosaurs berasal dari bahasa Yunani "hadros" yang berarti "berlekuk" dan "sauros" yang berarti "kadal", merujuk pada gigi rahang bawah yang berlemak dan berlekuk yang dimiliki oleh dinosaurus ini.</item>
+        <item>Ceratopsians berasal dari bahasa Yunani "keras" yang berarti "tanduk" dan "sauros" yang berarti "kadal", merujuk pada struktur tanduk dan lempeng-lempeg pada kepala dinosaurus ini.</item>
+    </string-array>
+
+    <string-array name="Main_Physical_Characteristics">
+        <item>Maiasaura memiliki ciri-ciri fisik utama berupa tubuh yang besar dengan leher panjang, kepala kecil, dan gigi berbentuk daun. Dinosaurus ini juga dikenal sebagai dinosaurus bebek karena paruhnya yang menyerupai paruh bebek.</item>
+        <item>Oviraptor memiliki ciri-ciri fisik utama berupa tubuh kecil dengan kepala yang besar dan rahang yang kuat. Dinosaurus ini memiliki cakar tajam dan paruh yang kuat untuk membantu dalam memecahkan telur dan mencari makanan.</item>
+        <item>Troodon memiliki ciri-ciri fisik utama berupa tubuh kecil dengan kepala yang besar, mata besar, dan gigi-gigi yang tajam. Dinosaurus ini memiliki otak yang besar dan dianggap sebagai salah satu dinosaurus cerdas.</item>
+        <item>Ornithomimids memiliki ciri-ciri fisik utama berupa tubuh yang ramping dengan kaki panjang, leher yang panjang, dan kepala kecil. Dinosaurus ini memiliki cakar-cakar yang kuat dan paruh yang panjang untuk mencabuti daun dan tumbuhan.</item>
+        <item>Ankylosaurs memiliki ciri-ciri fisik utama berupa tubuh yang rendah dan lebar dengan lempeng-lempeg tulang keras yang melindungi tubuhnya. Dinosaurus ini memiliki ekor yang bercantum dengan tulang-tulang keras yang digunakan untuk membela diri dari predator.</item>
+        <item>Sauropods memiliki ciri-ciri fisik utama berupa tubuh yang besar dengan leher yang panjang, ekor yang panjang, dan kaki yang kuat. Dinosaurus ini memiliki kepala kecil dan gigi-gigi yang kecil, serta tubuh yang dilindungi oleh lapisan kulit tebal.</item>
+        <item>Hadrosaurs memiliki ciri-ciri fisik utama berupa tubuh yang besar dengan leher yang panjang, kepala besar, dan mulut yang lebar. Dinosaurus ini memiliki gigi-gigi runcing di rahang atas dan gigi rahang bawah yang lebar dan rata.</item>
+        <item>Ceratopsians memiliki ciri-ciri fisik utama berupa tubuh yang besar dengan kepala yang besar dan tanduk-tanduk yang menonjol. Dinosaurus ini memiliki lempeng-lempeg tulang yang melindungi leher dan tubuhnya, serta paruh yang kuat untuk mencabuti tumbuhan.</item>
+    </string-array>
+
+    <string-array name="Interesting_Facts">
+        <item>Maiasaura adalah dinosaurus herbivora yang hidup dalam kelompok besar dan merawat anak-anaknya dengan penuh perhatian. Mereka merupakan salah satu dinosaurus pertama yang ditemukan bersama sarang dan telur, menunjukkan perilaku perawatan orang tua yang kompleks.</item>
+        <item>Oviraptor adalah dinosaurus yang mungkin salah dipahami sebagai pemangsa telur, tetapi penelitian terbaru menunjukkan bahwa mereka sebenarnya mungkin bertindak sebagai orang tua yang merawat sarang mereka sendiri. Nama "Oviraptor" sendiri berarti "pencuri telur", namun sekarang dipahami bahwa nama tersebut mungkin tidak sepenuhnya pantas.</item>
+        <item>Troodon dianggap sebagai salah satu dinosaurus terpintar yang pernah ada, dengan otak yang relatif besar dibandingkan dengan tubuhnya. Mereka adalah pemangsa yang cerdas dan bisa berburu di malam hari, menjadikan mereka predator yang efektif di berbagai kondisi.</item>
+        <item>Ornithomimids, juga dikenal sebagai "dinosaurus burung", adalah dinosaurus yang memiliki kecepatan lari yang sangat tinggi. Mereka merupakan herbivora yang hidup dalam kelompok besar dan sering kali dikejar oleh predator seperti Tyrannosaurus Rex.</item>
+        <item>Ankylosaurs adalah dinosaurus yang dilengkapi dengan persenjataan alami berupa lempeng-lempeg tulang keras yang melindungi tubuh mereka dari serangan predator. Mereka juga memiliki ekor yang dilengkapi dengan tulang berat yang berfungsi sebagai senjata untuk membela diri.</item>
+        <item>Sauropods adalah dinosaurus yang memiliki ukuran tubuh terbesar di antara semua dinosaurus yang pernah ada. Beberapa spesies sauropoda memiliki leher yang sangat panjang, mencapai panjang lebih dari 30 meter, yang membantu mereka mencapai tumbuhan tinggi di atas pohon.</item>
+        <item>Hadrosaurs, juga dikenal sebagai "dinosaurus bebek", adalah herbivora yang hidup di berbagai habitat seperti daratan basah dan dataran banjir. Mereka memiliki struktur khusus di rahang mereka yang digunakan untuk mengunyah makanan mereka dengan efisien.</item>
+        <item>Ceratopsians dikenal karena tanduk-tanduk besar dan lempeng-lempeg tulang di tengkorak mereka. Beberapa spesies seperti Triceratops menggunakan tanduk dan lempeng tulang ini untuk membela diri dari predator, sementara yang lainnya mungkin digunakan untuk menarik pasangan atau menunjukkan dominasi.</item>
+    </string-array>
+
+    <string-array name="family_images">
+        <item>@drawable/fam1</item>
+        <item>@drawable/fam2</item>
+        <item>@drawable/fam3</item>
+        <item>@drawable/fam4</item>
+        <item>@drawable/fam5</item>
+        <item>@drawable/fam6</item>
+        <item>@drawable/fam7</item>
+        <item>@drawable/fam8</item>
+
+    </string-array>
+</resources>
