@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.ImageButton
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +13,7 @@ import com.ifs21004.dinopedia.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val dataDino = ArrayList<Dino>()
+    private val dataDinoFamily = ArrayList<FamilyDino>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,61 +21,66 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.recyclerView.setHasFixedSize(false)
-        dataDino.addAll(getListDinos())
+        dataDinoFamily.addAll(getListFamilyDino())
         showRecyclerList()
+        binding.imageprofil.setOnClickListener {
+            navigateToProfile()
+        }
 
     }
+
 
     @SuppressLint("Recycle")
-    private fun getListDinos(): ArrayList<Dino> {
-        val dataImage = resources.obtainTypedArray(R.array.family_images)
-        val dataName = resources.getStringArray(R.array.dinosaur_families)
-        val dataDesc = resources.getStringArray(R.array.family_descriptions)
-        val dataOrigin = resources.getStringArray(R.array.Origin_of_Name)
-        val dataMain = resources.getStringArray(R.array.Main_Physical_Characteristics)
-        val dataInteresting = resources.getStringArray(R.array.Interesting_Facts)
-
-        val listDino = ArrayList<Dino>()
-        for (i in dataName.indices) {
-            val dino = Dino(
-                dataImage.getResourceId(i, -1),
-                dataName[i],
-                dataDesc[i],
-                dataOrigin[i],
-                dataMain[i],
-                dataInteresting[i]
-            )
-            listDino.add(dino)
-        }
-        dataImage.recycle()
-        return listDino
+    private fun navigateToProfile() {
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
     }
 
+    private fun getListFamilyDino(): ArrayList<FamilyDino> {
+        val dataImage = resources.obtainTypedArray(R.array.family_images)
+        val dataName = resources.getStringArray(R.array.family_name)
+        val dataDesc = resources.getStringArray(R.array.family_descriptions)
+        val dataPeriod = resources.getStringArray(R.array.dinosaur_lifespans)
+        val dataPhysical = resources.getStringArray(R.array.dinosaur_physical_characteristics)
+        val dataHabits = resources.getStringArray(R.array.dinosaur_habitats)
+        val dataClassif = resources.getStringArray(R.array.dinosaur_classifications)
+        val listDinoFamily = ArrayList<FamilyDino>()
+        for (i in dataName.indices) {
+            val dinoFamily = FamilyDino(
+                dataImage.getResourceId(i, -1), dataName[i],
+                dataDesc[i], dataPeriod[i],
+                dataPhysical[i], dataHabits[i], dataClassif[i]
+            )
+            listDinoFamily.add(dinoFamily)
+        }
+        return listDinoFamily
+    }
 
     private fun showRecyclerList() {
-        val isLandscape =
-            resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
-        val layoutManager = if (isLandscape) {
-            GridLayoutManager(this, 2)
+        if (resources.configuration.orientation ==
+            Configuration.ORIENTATION_LANDSCAPE
+        ) {
+            binding.recyclerView.layoutManager =
+                GridLayoutManager(this, 2)
         } else {
-            LinearLayoutManager(this)
+            binding.recyclerView.layoutManager =
+                LinearLayoutManager(this)
         }
 
-        binding.recyclerView.layoutManager = layoutManager
-        val listDinoAdapter = ListDinoAdapter(dataDino)
-        binding.recyclerView.adapter = listDinoAdapter
-
-        listDinoAdapter.setOnItemClickCallback(object : ListDinoAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Dino) {
-                showSelectedDino(data)
+        val listDinoFamilyAdapter = DinoFamilyAdapter(dataDinoFamily)
+        binding.recyclerView.adapter = listDinoFamilyAdapter
+        listDinoFamilyAdapter.setOnItemClickCallback(object :
+            DinoFamilyAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: FamilyDino) {
+                showSelectedDinoFamily(data)
             }
         })
     }
 
-    private fun showSelectedDino(dino: Dino) {
-        val intentWithData = Intent(this@MainActivity, DetailActivity::class.java)
-        intentWithData.putExtra(DetailActivity.EXTRA_DINO, dino)
+    private fun showSelectedDinoFamily(dinoFamily: FamilyDino) {
+        val intentWithData = Intent(this@MainActivity,
+            DetailActivity::class.java)
+        intentWithData.putExtra(DetailActivity.EXTRA_DINOFAMILY, dinoFamily)
         startActivity(intentWithData)
     }
 }
-

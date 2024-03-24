@@ -1,76 +1,82 @@
 package com.ifs21004.dinopedia
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.ifs21004.dinopedia.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityDetailBinding
-    private var dino: Dino? = null
+    private var dinoFamily: FamilyDino? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        dino = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(
-                EXTRA_DINO,
-                Dino::class.java
-            )
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra(EXTRA_DINO)
-        }
+        // Mendapatkan data DinoFamily dari intent
+        dinoFamily = intent.getParcelableExtra(EXTRA_DINOFAMILY)
+
+        // Menampilkan tombol back di ActionBar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        if (dino != null) {
-            supportActionBar?.title = "Dino ${dino!!.name}"
-            binding.tvDetailTitle.text = dino!!.name
-            loadData(dino!!)
-        } else {
-            // Handle case when dino is null
+
+        // Jika data DinoFamily tidak null, maka tampilkan detailnya
+        dinoFamily?.let {
+            supportActionBar?.title = it.family_name
+            loadData(it)
+        } ?: finish() // Jika data DinoFamily null, maka tutup activity
+
+        // Mendapatkan referensi button
+        val buttonViewDinosaurs = findViewById<Button>(R.id.buttonViewDinosaurs)
+
+        // Menambahkan listener klik pada button
+        buttonViewDinosaurs.setOnClickListener {
+            // Pindah ke activity MainDino dengan membawa nama family sebagai data tambahan
+            val intent = Intent(this@DetailActivity, MainDino::class.java)
+            intent.putExtra(MainDino.EXTRA_SELECTED_FAMILY, dinoFamily?.family_name)
+            startActivity(intent)
         }
     }
 
-    private fun loadData(dino: Dino) {
-        binding.ivDetailImage.setImageResource(dino.image)
-        binding.tvDetailTitle.text = dino.name
-        binding.tvDetailDesc.text = dino.desc
-        binding.tvDetailOrign.text = dino.origin
-        binding.tvDetailMain.text = dino.main
-        binding.tvDetailInteresting.text = dino.interesting
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    /*fungsi 2*/
-    private fun shareDino() {
-        if (dino != null) {
-            val shareIntent = Intent(Intent.ACTION_SEND)
-            shareIntent.type = "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Info Dino: ${dino!!.name}")
-            val shareMessage = "Nama Family: ${dino!!.name}\n" +
-                    "Deskripsi: ${dino!!.desc}\n" +
-                    "Asal Usul Nama : ${dino!!.origin}\n" +
-                    "Karakteristik Utama: ${dino!!.main}\n" +
-                    "Fakta Menarik: ${dino!!.interesting}"
-            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
-            startActivity(Intent.createChooser(shareIntent, "Bagikan melalui"))
-        }
+    private fun loadData(familyDino: FamilyDino) {
+        // Memuat data DinoFamily ke dalam tampilan
+        binding.ivDetailImage.setImageResource(familyDino.family_images)
+        binding.tvDetailTitle.text = familyDino.family_name
+        binding.textview1.text = familyDino.family_descriptions
+        binding.textView2.text = familyDino.dinosaur_lifespans
+        binding.textView3.text = familyDino.dinosaur_physical_characteristics
+        binding.textView4.text = familyDino.dinosaur_habitats
+        binding.textView6.text = familyDino.dinosaur_classifications
     }
 
     companion object {
-        const val EXTRA_DINO = "extra_dino"
+        const val EXTRA_DINOFAMILY = "EXTRA_DINOFAMILY"
+    }
+
+    fun onBackClicked(view: View) {
+        onBackPressed()
+    }
+
+    fun onShareClicked(view: View) {
+        shareContent()
+    }
+
+    private fun shareContent() {
+        dinoFamily?.let {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Info Family Dino: ${it.family_name}")
+            val shareMessage = "Nama Family: ${it.family_name}\n" +
+                    "Deskripsi: ${it.family_descriptions}\n" +
+                    "Periode Hidup: ${it.dinosaur_lifespans}\n" +
+                    "Karakter Fisik: ${it.dinosaur_physical_characteristics}\n" +
+                    "Habitat dan Lingkungan: ${it.dinosaur_habitats}\n" +
+                    "Kalsifikasi: ${it.dinosaur_classifications}"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
+            startActivity(Intent.createChooser(shareIntent, "Bagikan melalui"))
+        }
     }
 }
